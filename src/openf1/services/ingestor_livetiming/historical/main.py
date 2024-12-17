@@ -378,7 +378,7 @@ def ingest_meeting(year: int, meeting_key: int, verbose: bool = True):
         if verbose:
             logger.info(f"Ingesting session {session_key}")
         ingest_session(
-            year=year, meeting_key=meeting_key, session_key=session_key, verbose=False
+            year=year, meeting_key=meeting_key, session_key=session_key, verbose=verbose
         )
 
 
@@ -391,7 +391,7 @@ def ingest_season(year: int, verbose: bool = True):
     for meeting_key in meeting_keys:
         if verbose:
             logger.info(f"Ingesting meeting {meeting_key}")
-        ingest_meeting(year=year, meeting_key=meeting_key, verbose=False)
+        ingest_meeting(year=year, meeting_key=meeting_key, verbose=verbose)
 
 
 if __name__ == "__main__":
